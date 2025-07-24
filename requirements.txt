@@ -1,6 +1,6 @@
 pyrogram==2.0.106
 tgcrypto==1.2.5
-pytgcalls==1.2.4
+pytgcalls==2.0.0.dev4
 aiohttp
 pymongo
 youtube_dl
