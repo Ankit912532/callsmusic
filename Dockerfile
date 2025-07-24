@@ -1,17 +1,20 @@
+# Use Python 3.10 base image (pytgcalls doesn't support 3.11+)
 FROM python:3.10-slim
 
-# Install system dependencies
-RUN apt update && apt install -y ffmpeg git curl python3-pip
-
-# Upgrade pip properly
-RUN python3 -m pip install --upgrade pip setuptools
-
-# Copy project
-COPY . /app
+# Set working directory
 WORKDIR /app
 
-# Install Python dependencies
-RUN pip install -r requirements.txt
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
 
-# Run the bot
-CMD ["python3", "-m", "callsmusic"]
+# Copy project files
+COPY . .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Command to run your bot
+CMD ["python3", "main.py"]
