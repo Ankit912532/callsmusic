@@ -1,7 +1,9 @@
 pyrogram==2.0.106
 tgcrypto==1.2.5
-pytgcalls==2.0.0.dev4
-aiohttp
-pymongo
-youtube_dl
-python-dotenv
+pytgcalls==3.0.0.dev6
+aiohttp==3.9.5
+pymongo==4.13.2
+youtube_dl==2021.12.17
+python-dotenv==1.1.1
+pyaes==1.6.1
+pysocks==1.7.1
